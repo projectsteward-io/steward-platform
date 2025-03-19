@@ -1,0 +1,26 @@
+
+
+<p style="color:red;">DEBUG: Dashboard Base Loaded</p>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a>Profile</a></li>
+                <li><a>Workers Network</a></li>  <!-- MAIN FEATURE -->
+                <li><a>Feedback and Reports </a></li>  <!-- Management Feedback Table -->
+                <li><a>Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        {% block dashboard_content %}
+        <!-- This will be overridden by child templates -->
+        {% endblock %}
+       
+    </main>
+</div>
+{% endblock %}

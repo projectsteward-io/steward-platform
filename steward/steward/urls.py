@@ -24,6 +24,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),  # Built-in authentication URLs
     path('register/', views.register, name='register'),
     path('login/', LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('profile/', views.profile, name='profile'),
+    path('dashboard/', views.dashboard, name='dashboard'),
     path('', views.home, name='home'),
 ]
